@@ -15,13 +15,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build
-      - name: Commit build directory
-        run: |
-          git config --global user.name "gitactions"
-          git config --global user.email "gitaction@gmail.com"
-          git add /build
-          git commit -am "auto commit of build dir"
-          git push
+#      - name: Commit build directory
+#        run: |
+#          git config --global user.name "gitactions"
+#          git config --global user.email "gitaction@gmail.com"
+#          git add /build
+#          git commit -am "auto commit of build dir"
+#          git push
+
+      - uses: actions/checkout@v3
+      # Make changes to pull request here
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
 
 
 #  Explore-GitHub-Actions:
