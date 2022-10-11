@@ -15,7 +15,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build
-
+      - name: Commit build directory
+      - run: |
+          git config --global user.name "gitactions"
+          git config --global user.email "gitaction@gmail.com"
+          git commit -am "auto commit of build dir"
+          git push
 
 
 #  Explore-GitHub-Actions:
