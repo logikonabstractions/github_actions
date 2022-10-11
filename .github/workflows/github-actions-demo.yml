@@ -19,6 +19,7 @@ jobs:
         run: |
           git config --global user.name "gitactions"
           git config --global user.email "gitaction@gmail.com"
+          git add /build
           git commit -am "auto commit of build dir"
           git push
 
