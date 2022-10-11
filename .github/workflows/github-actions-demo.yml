@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   npm_build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
