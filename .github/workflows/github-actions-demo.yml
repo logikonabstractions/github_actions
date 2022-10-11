@@ -16,12 +16,12 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: git add -f build/
-#      - name: Commit build directory
-#        run: |
-#          git config --global user.name "gitactions"
-#          git config --global user.email "gitaction@gmail.com"
-#          git add /build
-#          git commit -am "auto commit of build dir"
+      - name: Commit build directory
+        run: |
+          git config --global user.name "gitactions"
+          git config --global user.email "gitaction@gmail.com"
+          git add /build
+          git commit -am "auto commit of build dir"
 #          git push
 
       - uses: actions/checkout@v3
